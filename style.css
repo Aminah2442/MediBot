@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@500;600;700&family=Cabin:wght@400..700&display=swap');
+
+:root {
+    --cabin-condensed: 'Cabin Condensed', sans-serif;
+    --cabin: 'Cabin', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+    font-family: var(--cabin);
+    font-weight: 500;
+    background-image: url("assets/background-1.png");
+    background-size: cover;
+}
+.overlay-content, .content {
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 40px;
+    border-radius: 50px;
+    width: 1200px;
+    height: 600px;
+}
+.content {
+    display: flex;
+    padding: 50px 40px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    background-image: url("assets/background-2.png");
+    background-size: cover;
+}
+.text {
+    padding-left: 40px;
+    max-width: 45%;
+}
+.text h1 {
+    font-size: 150px;
+    font-family: var(--cabin-condensed);
+    margin: -100px 0 0;
+    background: radial-gradient(#355B89, #761D29);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text p {
+    font-size: 18px;
+    color: #828282;
+    margin: 20px 0;
+}
+.button-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.button {
+    background: #761D29;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--cabin);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.overlay-content {
+    display: none; /* Initially hidden */
+    opacity: 0;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    transition: opacity 1s ease-in-out; /* Transition effect */
+}
+.overlay-content.show {
+    display: flex;
+    opacity: 1; /* Show and apply opacity */
+}
+.chatbot-container {
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.heart, .pills {
+    position: absolute;
+    z-index: 1;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+}
+.heart {
+    top: 3%;
+    right: 3%;
+    width: 200px;
+    height: auto;
+    animation: float 5s ease-out infinite;
+}
+.pills {
+    bottom: 2%;
+    left: 3%;
+    width: 300px;
+    height: auto;
+    animation: float 5s ease-in infinite;
+}
+@keyframes float {
+    50% {
+        transform: translateY(10px);
+    }
+}
